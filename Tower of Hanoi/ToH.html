@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./toh.css">
+    <title>Tower of Hanoi</title>
+</head>
+<body onload="MakePlate(3), timer(), SetTimeValue(), WelcomePopup()">
+    <h1>Tower of Hanoi</h1>
+    <div class="All-Btn">
+        <button class="Plates-btn" draggable="false"  onclick="MakePlate(1)" id="Platesbtnid">Plates +</button>
+        <button class="Plates-btn" draggable="false"  onclick="RemovePlate()" id="PlatesbtnReduceid">Plates -</button>
+        <button class="undo-btn"  draggable="false" onclick="Undo()">UNDO</button>
+        <button class="redo-btn"  draggable="false" onclick="Redo()">REDO</button>
+        <button class="increaseTime" draggable="false"  onclick="IncreaseTime()" id="TimerIncId">Time +</button>
+        <button class="reset-btn" draggable="false"  onclick="Reset()" disabled="true" id="ResetBtn" >RESET</button>
+    </div>
+    <div id="upperContainer">
+        <div class="container" id = "containerid">
+            <div class="col c1" id="1" draggable="false" ondrop="Drop(event)" ondragover="allowDrop(event)">
+
+            </div>
+
+            <div class="col c2" id="2" draggable="false" ondrop="Drop(event)" ondragover="allowDrop(event)">
+
+            </div>
+
+            <div class="col c3" id="3" draggable="false" ondrop="Drop(event)" ondragover="allowDrop(event)">
+
+            </div>
+        </div>
+    </div>
+    
+        <div class="stats">
+        <p id="13"  draggable="false" class="Moves">Moves: 00</p> <br><br>
+        <p id="12"  draggable="false" class="timer_val" >Time Limit: </p> <br><br>
+        <p id="11"  draggable="false" class="timer" >Time Left: 00s</p>
+    </div>
+    <div class="popup" id="popupid" draggable="false" >
+        <img src="./Loser.gif" alt="" id="PopImg" draggable="false" >
+        <h2 id="PopTitle" draggable="false" >Time Over!</h2>
+        <p id="PopMsg" draggable="false" >Press Restart To Start The Game Again...</p>
+        <button class="reset-btn" onclick="Reset(), closePopup()" draggable="false" , id="ResetbtnId">RESTART!</button>
+   </div>
+
+
+
+</body>
+</html>
+<script src="toh.js"></script>
